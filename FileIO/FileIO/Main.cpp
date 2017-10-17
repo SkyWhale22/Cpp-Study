@@ -35,28 +35,11 @@ int main()
 {
 	FileManager fManager;
 
-
-	std::unordered_map<char, int>* letters;
-	std::unordered_map<std::string, int>* words;
-	
-	letters = &fManager.m_letters;
-	words = &fManager.m_words;
-
-	fManager.FileReader(".\\data\\InputTest_2.txt");
+	//fManager.FileReader(".\\data\\InputTest_2.txt");
 	fManager.FileReader(".\\data\\WarAndPeace_LeoTolstoy.txt");
-	//fManager.PrintContents();
+	fManager.PrintTexts();
 
-	//fManager.PrintTexts(".\\data\\LetterMapContents.txt", fManager.GetLetterMap());
-	//fManager.PrintTexts(".\\data\\LetterMapContents.txt", fManager.m_words);
-
-	std::vector<int> v(words->size());
-	std::vector<std::string> w(words->size());
-	transform(words->begin(), words->end(), v.begin(), GetSecond);
-
-	sort(v.begin(), v.end());
-	
-
-	for (int i = 0; i<v.size(); i++) std::cout << v[i] << std::endl;
+	cout << endl << endl;
 
 	system("pause");
 	return 0;

@@ -29,20 +29,21 @@ void FileManager::FileReader(const char* pFileName)
 			
 			if (dashFind != std::string::npos)
 			{
-				continue;
+				PutLetterInMap(line[dashFind]);
+				line = line.substr(0, dashFind) + line.substr(dashFind + 1, line.size());
 			}
 
 			size_t found = line.find_first_of(".,'#&*\"");
 			
-			// does the line have a colon?
+			// does the line have a symbol?
 			if(found != std::string::npos)
 			{
-				// remove the coma and everything afterwards
+				// remove the symbol
 				PutLetterInMap(line[found]);
 				line = line.substr(0, found);
 			}
 			
-			for (int index = 0; index < line.size(); ++index)
+			for (size_t index = 0; index < line.size(); ++index)
 			{
 				PutLetterInMap(line[index]);
 			}
@@ -88,60 +89,63 @@ void FileManager::FileReader(const char* pFileName)
 #endif
 	else
 	{   
-		std::cout << "Couldn't open " << pFileName;
+		std::cout << "Couldn't open " << pFileName; 
 	}
 }
 
-void FileManager::PrintContents()
-{
-#if (J == 0)
-	for (auto& it = m_words.begin(); it != m_words.end(); ++it)
-	{
-		std::cout << it->first << " : " << it->second << std::endl;
-	}
-
-#elif (J == 1)
-	std::cout << std::endl;
-
-	for (auto& it = m_words.begin(); it != m_words.end(); ++it)
-	{
-		std::cout << it->first << " : " << it->second << std::endl;
-	}
-
-	for (auto& it = m_letters.begin(); it != m_letters.end(); ++it)
-	{
-		std::cout << it->first << " : " << it->second << std::endl;
-	}
-#endif // !j == 0
-}
-
-void FileManager::PrintTexts(const char* fileName, std::unordered_map<std::string, int> map)
+void FileManager::PrintTexts()
 {
 	// Create ofstream
+	std::vector<std::pair<std::string, int>> word(m_words.begin(), m_words.end());
+	std::vector<std::pair<char, int>> letter(m_letters.begin(), m_letters.end());
+
+	std::sort(word.begin(), word.end(), WordMapByValue());
+	std::sort(letter.begin(), letter.end(), LetterMapByValue());
+
 	std::ofstream fileWriter;
 
+	char* firstFile = ".\\data\\WordMapContents.txt";
+	char* secondFile = ".\\data\\LetterMapContents.txt";
+
 	// Open a file
-	fileWriter.open(fileName, FileMode::out);
+	fileWriter.open(firstFile, FileMode::out);
 	
 	// Test if it's open
 	if (fileWriter.is_open())
 	{
-		std::string data;
-		for (auto& it = map.begin(); it != map.end(); ++it)
+		for (WordPair it : word)
 		{
-			fileWriter << it->first << " : " << it->second << std::endl;
+			std::cout << it.first << " : " << it.second << std::endl;
+			fileWriter << it.first << " : " << it.second << std::endl;
 		}
-
-		// Write some data!
-
 		// Close the file
 		fileWriter.close();
 	}
 	else
 	{
-		std::cout << "Could not open: " << fileName << std::endl;
+		std::cout << "Could not open: " << firstFile << std::endl;
 	}
 
+	fileWriter.open(secondFile, FileMode::out);
+
+	if (fileWriter.is_open())
+	{
+		for (LetterPair it : letter)
+		{
+			std::cout << it.first << " : " << it.second << std::endl;
+			fileWriter << it.first << " : " << it.second << std::endl;
+		}
+
+		// Close the file
+		fileWriter.close();
+	}
+
+	else
+	{
+		std::cout << "Could not open: " << firstFile << std::endl;
+	}
+
+	std::cout << "\nLetter and word Data has been extracted to .txt files. Please check it." << std::endl;
 }
 
 void FileManager::PutLetterInMap(const char & ch)
@@ -149,13 +153,14 @@ void FileManager::PutLetterInMap(const char & ch)
 	if (m_letters.find(ch) == m_letters.end())
 		m_letters.emplace(ch, 1);
 	else
-		++m_letters.find(ch)->second;
+		++m_letters[ch];
 }
 
 void FileManager::PutWordInMap(const std::string&  pline)
 {
+
 	if (m_words.find(pline) == m_words.end())
 		m_words.emplace(pline, 1);
 	else
-		++m_words.find(pline)->second;
+		++m_words[pline];
 }
