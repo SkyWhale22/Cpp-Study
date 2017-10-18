@@ -15,17 +15,20 @@ void FileManager::FileReader(const char* pFileName)
 	//fileReader.open(pFileName);
 	std::string line;
 
-#if (I == 0)
-
 	if (fileReader.is_open())
 	{
+		int messageLine = 0;
+
 		while (fileReader.eof() == false)
 		{
 			if (fileReader.eof() == true)
 				break;
 			fileReader >> line;
-		
-			size_t dashFind = line.find_first_of('-');
+
+			if (line == "\n")
+				std::cout << std::endl;
+
+			size_t dashFind = line.find_first_of('-^');
 			
 			if (dashFind != std::string::npos)
 			{
@@ -33,7 +36,7 @@ void FileManager::FileReader(const char* pFileName)
 				line = line.substr(0, dashFind) + line.substr(dashFind + 1, line.size());
 			}
 
-			size_t found = line.find_first_of(".,'#&*\"");
+			size_t found = line.find_first_of(".,'#&*\"?/;!()");
 			
 			// does the line have a symbol?
 			if(found != std::string::npos)
@@ -51,42 +54,7 @@ void FileManager::FileReader(const char* pFileName)
 			PutWordInMap(line);
 		}
 	}
-#elif  (I == 1)
-	if (fileReader.is_open())
-	{
-		while (fileReader.get(letter))
-		{
-			if (fileReader.eof() == true)
-				break;
 
-			if (letter != '\n')
-			{
-				if (m_letters.find(letter) == m_letters.end())
-				{
-					if (letter != ' ')
-						m_letters.emplace(letter, 1);
-				}
-
-				else
-					++m_letters[letter];
-
-				if (letter != '"' && letter != '.' && letter != ',' && letter != ' ')
-					line += letter;
-
-				else
-				{
-					if (m_words.find(line) == m_words.end())
-						m_words.emplace(line, 1);
-					else
-						++m_words[line];
-
-					line = "";
-				}
-			}
-		}
-		fileReader.close();
-	}
-#endif
 	else
 	{   
 		std::cout << "Couldn't open " << pFileName; 
@@ -118,6 +86,7 @@ void FileManager::PrintTexts()
 			std::cout << it.first << " : " << it.second << std::endl;
 			fileWriter << it.first << " : " << it.second << std::endl;
 		}
+
 		// Close the file
 		fileWriter.close();
 	}

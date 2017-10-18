@@ -49,5 +49,4 @@ public:
 	void PrintTexts();
 	void PutLetterInMap(const char& ch);
 	void PutWordInMap(const std::string& pline);
-	//Words GetWordMap() { return m_words; }
 };
