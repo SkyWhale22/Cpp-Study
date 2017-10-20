@@ -34,28 +34,6 @@
 //---------------------------------------------------------------------------------------------------------------------
 // Assignment:
 // 
-
-// 5) The enemy behaviors should be as follows:
-//        a) Enemy #1:
-//               1) Wander randomly by choosing one of the four empty adjacent tiles.  They will avoid all special 
-//                  tiles.
-//               2) If the player is close (within 5 tiles), the enemy will always move towards the player.  They 
-//                  no longer avoid special tiles and will trigger any bomb, mimic, teleporter, or treasure chest.
-//               3) Their symbol should be an exclamation point (!).
-//        b) Enemy #2:
-//               1) Wander randomly by choosing one of the four empty adjacent tiles.  They will avoid all special 
-//                  tiles.
-//               2) If the player is close (within 5 tiles), the enemy will always move away from the player.  They 
-//                  no longer avoid special tiles and will trigger any bomb, mimic, teleporter, or treasure chest.
-//               3) Their symbol should be a question mark(?).
-
-// 6) Once again, there are a few places where the existing architecture is not ideal.  In fact, there at least two 
-//    instances of things I've explicitly said to always watch out for.  See how many you can find.  Justify your 
-//    decisions (see below).
-
-// 7) Keep notes about your architectural decisions and defend them.  What was your motivation?  Why did you choose
-//    one technique over another?  Those notes should be in the comment block below.
-
 // ***8) Add a teleporter tile.  It should work like this:
 //        a) Teleporter tiles always come in pairs.
 //        b) This pair is linked.  When the player steps onto one, he will be teleported to the other.
@@ -70,7 +48,7 @@
 //---------------------------------------------------------------------------------------------------------------------
 // Your notes go here:
 // 
-// 
+//  No memory leak!
 //---------------------------------------------------------------------------------------------------------------------
 
 int main()
@@ -88,15 +66,13 @@ int main()
 	pWorld->GenerateWorld();
 
     // main game loop
-    /*while (!world->IsGameOver())
+    while (!pWorld->IsGameOver())
     {
-		//world->Draw();
-		world->Update();
-    }*/
+		pWorld->Draw();
+		pWorld->Update();
+    }
 
 	pWorld->FreeInstance();
-	pWorld = nullptr;
-    _getch();
 
 	return 0;
 }

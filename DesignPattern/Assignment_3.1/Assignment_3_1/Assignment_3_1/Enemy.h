@@ -16,9 +16,9 @@ public:
 	Enemy(int x, int y);
 
 	virtual void Draw() override;
-	virtual bool IsDead() override { return (m_hitPoints <= 0); }
+	virtual bool IsDead() override { return (m_hitPoints <= 0) ? true : false; }
 	virtual void Move(int deltaX, int deltaY) override;
-	
+
 	void RandomMove();
 	void SetType();
 	void MoveEnemyDependsOnPlayer(World* pWorldData, int opposite);

@@ -16,6 +16,9 @@ Player::Player(int x, int y)
 	m_hitPoints = k_maxHitPoints;
 }
 
+//---------------------------------------------------------------
+// Prints a character depends on its status
+//---------------------------------------------------------------
 void Player::Draw()
 {
     if (!IsDead())
@@ -24,11 +27,17 @@ void Player::Draw()
         cout << "~";
 }
 
+//---------------------------------------------------------------
+// Draws UI
+//---------------------------------------------------------------
 void Player::DrawUi() const
 {
     cout << "HP: " << m_hitPoints << "  Detector: " << m_detectorCount << "  Gold: " << m_gold << "  Move Count: " << m_moveCount << "  Score: " << CalculateScore() << "\n\n";
 }
 
+//---------------------------------------------------------------
+// Gets input.
+//---------------------------------------------------------------
 bool Player::Update()
 {
     if (IsDead())
@@ -67,25 +76,35 @@ bool Player::Update()
     return true;
 }
 
+//---------------------------------------------------------------
+// Moves the player
+//---------------------------------------------------------------
 void Player::Move(int deltaX, int deltaY)
 {
 	Character::Move(deltaX, deltaY);
     ++m_moveCount;
 }
 
-
+//---------------------------------------------------------------
+// Adds score
+//---------------------------------------------------------------
 void Player::AddGold(int amount)
 {
     m_gold += amount;
 }
-
+//---------------------------------------------------------------
+// Calculates total score.
+//---------------------------------------------------------------
 int Player::CalculateScore() const
 {
     int score = k_baseScore + (m_hitPoints * k_hitPointsWeight) + (m_gold * k_goldWeight) - (m_moveCount * k_moveCountWeight);
     return score;
 }
 
-
+//---------------------------------------------------------------
+// Checks the surrounding tiles and if it is a mimic,
+// changes it's state to revealed state.
+//---------------------------------------------------------------
 void Player::ActivateDetactor()
 {
 	if (m_detectorCount > 0)

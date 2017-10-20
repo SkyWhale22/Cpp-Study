@@ -18,11 +18,16 @@
 using std::cout;
 using std::endl;
 
+//---------------------------------------------------------------------------------------------------------------------
+// Note :
+// Because the world object must be a single object, I have used singleton
+//---------------------------------------------------------------------------------------------------------------------
+
 World* World::m_pWorld = nullptr;
 
 const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTiles] =
 {
-    World::TileProbability(795, TileType::k_floor),
+    World::TileProbability(797, TileType::k_floor),
     World::TileProbability(75, TileType::k_bomb),
     World::TileProbability(75, TileType::k_treasure),
     World::TileProbability(50, TileType::k_mimic),
@@ -58,6 +63,9 @@ World::~World()
 
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Initial data
+//---------------------------------------------------------------------------------------------------------------------
 void World::Init(int width, int height)
 {
 	// if we have a grid, destroy it
@@ -84,6 +92,9 @@ void World::Init(int width, int height)
 	m_height = height;
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Creates the player
+//---------------------------------------------------------------------------------------------------------------------
 void World::CreatePlayer(int x, int y)
 {
 	assert(x >= 0 && x < m_width);
@@ -91,6 +102,9 @@ void World::CreatePlayer(int x, int y)
 	m_pPlayer = new Player(x, y);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Generates tiles and enemies
+//---------------------------------------------------------------------------------------------------------------------
 void World::GenerateWorld()
 {    
 	// calculate the max probability
@@ -161,6 +175,9 @@ void World::GenerateWorld()
 	}
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Draws the grid on the console
+//---------------------------------------------------------------------------------------------------------------------
 void World::Draw()
 {
     system("cls");
@@ -197,6 +214,9 @@ void World::Draw()
 	}
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Updates player's and enemies' status
+//---------------------------------------------------------------------------------------------------------------------
 void World::Update()
 {
     if (!m_pPlayer->Update())
@@ -208,59 +228,34 @@ void World::Update()
 
 	for (int i = 0; i < 3; ++i)
 	{
-		int random = (rand() % 4) + 1;
-
-		if (m_pEnemy[i]->IsDead() == false)
-		{
-			switch (random)
-			{
-			case 1:
-				m_pEnemy[i]->Move(0, -1);
-				break;
-			case 2:
-				m_pEnemy[i]->Move(-1, 0);
-				break;
-			case 3:
-				m_pEnemy[i]->Move(0, 1);
-				break;
-			case 4:
-				m_pEnemy[i]->Move(1, 0);
-				break;
-			}
-		}
-
-		int x1 = m_pEnemy[i]->GetX();
-		int y1 = m_pEnemy[i]->GetY();
-
-		if (x1 < 0 || y1 < 0 || x1 >= m_width || y1 >= m_height)
-		{
-			m_pEnemy[i]->Kill();
-		}
+		m_pEnemy[i]->RandomMove();
 	}
 
-    int x = m_pPlayer->GetX();
-    int y = m_pPlayer->GetY();
-    // this is a death arena, so check to see if we went over the edge of the world
-    if (x < 0 || y < 0 || x >= m_width || y >= m_height)
-    {
-        m_pPlayer->Kill();
-        EndGame();
-        return;
-    }
+
+	if (m_pPlayer->IsAtOutSide())
+	{
+		EndGame();
+		return;
+	}
 
     // process the tile the player is on
+    int x = m_pPlayer->GetX();
+    int y = m_pPlayer->GetY();
 	int index = (y * m_width) + x;
 	m_ppGrid[index]->OnEnter(m_pPlayer);
 
-	/*
+	
 	for (int i = 0; i < 3; ++i)
 	{
 		index = (m_pEnemy[i]->GetY() * m_width) + m_pEnemy[i]->GetX();
-		if(index >= 0)
+		if(index >= 0 && m_pEnemy[i]->IsDead() == false)
 			m_ppGrid[index]->OnEnter(m_pEnemy[i]);
-	}*/
+	}
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Ends game
+//---------------------------------------------------------------------------------------------------------------------
 void World::EndGame()
 {
     if (!m_pPlayer->IsDead())
@@ -276,6 +271,9 @@ void World::EndGame()
     m_gameOver = true;
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+// Calculates the distance bet/ an enemy and the player.
+//---------------------------------------------------------------------------------------------------------------------
 bool World::IsPlayerNear(int enemyIndex)
 {
 	Tile* pCurrentEnemyTile = m_ppGrid[enemyIndex];

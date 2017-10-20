@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Tile">
-      <UniqueIdentifier>{eb508b84-204b-4f1a-beeb-d784d5697be0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Characters">
       <UniqueIdentifier>{50e51c42-1b7c-4401-8027-6e5c71121dbf}</UniqueIdentifier>
     </Filter>
@@ -31,25 +28,28 @@
     <Filter Include="StateMachine\Tile\TileState">
       <UniqueIdentifier>{86edcbc0-c986-4f1e-a9b1-6280deb4c304}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TileType">
+      <UniqueIdentifier>{eb508b84-204b-4f1a-beeb-d784d5697be0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment_3_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BombTile.cpp">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClCompile>
     <ClCompile Include="EndTile.cpp">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClCompile>
     <ClCompile Include="FloorTile.cpp">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClCompile>
     <ClCompile Include="MimicTile.cpp">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClCompile>
     <ClCompile Include="TreasureTile.cpp">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Characters</Filter>
@@ -78,19 +78,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="MimicTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="FloorTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="EndTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="BombTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Characters</Filter>
@@ -102,13 +102,13 @@
       <Filter>Characters</Filter>
     </ClInclude>
     <ClInclude Include="DamagingTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="TreasureTile.h">
-      <Filter>Tile</Filter>
+      <Filter>TileType</Filter>
     </ClInclude>
     <ClInclude Include="GlobalData.h">
       <Filter>World</Filter>

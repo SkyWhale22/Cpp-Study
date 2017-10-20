@@ -20,6 +20,10 @@ void TreasureTile::Draw()
         std::cout << ".";  // floor
 }
 
+//---------------------------------------------------------------
+// If the player get a tressure, adds score and change it to
+// collected status.
+//---------------------------------------------------------------
 void TreasureTile::OnEnter(Character* pCharacter)
 {
     if (!m_collected)
