@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Tile">
+      <UniqueIdentifier>{eb508b84-204b-4f1a-beeb-d784d5697be0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Characters">
+      <UniqueIdentifier>{50e51c42-1b7c-4401-8027-6e5c71121dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{561f1333-bcbe-4e8e-9b08-ee8360318fb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine">
+      <UniqueIdentifier>{d1488f5e-5e14-40bf-b92b-4c3c8e93cf59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine\Tile">
+      <UniqueIdentifier>{c7dee159-3078-45ce-a9be-ab254c3e030c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine\Tile\TileState">
+      <UniqueIdentifier>{86edcbc0-c986-4f1e-a9b1-6280deb4c304}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Assignment_3_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BombTile.cpp">
+      <Filter>Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="EndTile.cpp">
+      <Filter>Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="FloorTile.cpp">
+      <Filter>Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="MimicTile.cpp">
+      <Filter>Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="TreasureTile.cpp">
+      <Filter>Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="ExploadedState.cpp">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenState.cpp">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClCompile>
+    <ClCompile Include="RevealedState.cpp">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClCompile>
+    <ClCompile Include="TileStateMachine.cpp">
+      <Filter>StateMachine\Tile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="MimicTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="EndTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="BombTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="DamagingTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="TreasureTile.h">
+      <Filter>Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalData.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="ExploadedState.h">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenState.h">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClInclude>
+    <ClInclude Include="RevealedState.h">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClInclude>
+    <ClInclude Include="TileState.h">
+      <Filter>StateMachine\Tile\TileState</Filter>
+    </ClInclude>
+    <ClInclude Include="TileStateMachine.h">
+      <Filter>StateMachine\Tile</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

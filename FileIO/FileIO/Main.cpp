@@ -35,10 +35,9 @@ int main()
 {
 	FileManager fManager;
 
-	cout << "Extracting data to .txt files. Please wait for minutes";
-
-	//fManager.FileReader(".\\data\\WarAndPeace_LeoTolstoy.txt");
-	//fManager.PrintTexts();
+	//fManager.FileReader(".\\data\\InputTest_2.txt");
+	fManager.FileReader(".\\data\\WarAndPeace_LeoTolstoy.txt");
+	fManager.PrintTexts();
 
 	cout << endl << endl;
 

@@ -4,8 +4,6 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
-#include <map>
-#include <set>
 #include <algorithm>
 #include <vector>
 #include <functional>
@@ -21,7 +19,7 @@ struct WordMapByValue
 {
 	bool operator() (const WordPair& a, const WordPair& b) const
 	{
-		return a.second < b.second;
+		return a.second > b.second;
 	};
 };
 
@@ -29,7 +27,7 @@ struct LetterMapByValue
 {
 	bool operator() (const LetterPair& a, const LetterPair& b) const
 	{
-		return a.second < b.second;
+		return a.second > b.second;
 	};
 };
 
