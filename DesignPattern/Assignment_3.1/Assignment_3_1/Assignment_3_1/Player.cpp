@@ -100,7 +100,6 @@ void Player::ActivateDetactor()
 				}
 
 				int index = ((m_y + y) * k_worldHeight) + (m_x + x);
-
 				if (World::GetInstance()->GetTileType(index) == TileType::k_mimic)
 				{
 					Tile* pCurrentTile = World::GetInstance()->m_ppGrid[index];

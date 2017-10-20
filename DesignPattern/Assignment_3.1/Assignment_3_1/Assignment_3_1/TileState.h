@@ -11,6 +11,7 @@ class TileStateMachine;
 class TileState
 {
 public:
+	
 	virtual void PrintTile() = 0;
 
 protected:

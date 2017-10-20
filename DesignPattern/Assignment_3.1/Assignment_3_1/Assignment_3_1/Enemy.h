@@ -14,7 +14,6 @@ class Enemy : public Character
 
 public:
 	Enemy(int x, int y);
-	~Enemy();
 
 	virtual void Draw() override;
 	virtual bool IsDead() override { return (m_hitPoints <= 0); }

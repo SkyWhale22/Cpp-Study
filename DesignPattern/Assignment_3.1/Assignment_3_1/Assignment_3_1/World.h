@@ -3,37 +3,33 @@
 #define __WORLD_H__
 
 #include <utility>
-#include <vector>
-#include <unordered_map>
 #include "GlobalData.h"
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
 
-class Tile;
-
 class World
 {
 private:
-	static World* world;
-public:
+	static World* m_pWorld;
+public: 
 
 	static World* GetInstance()
 	{
-		if (world == nullptr)
+		if (m_pWorld == nullptr)
 		{
-			world = new World();
+			m_pWorld = new World();
 		}
 
-		return world;
+		return m_pWorld;
 	}
 
 	static void FreeInstance()
 	{
-		if (world != nullptr)
+		if (m_pWorld != nullptr)
 		{
-			delete world;
-			world = nullptr;
+			delete m_pWorld;
+			m_pWorld = nullptr;
 		}
 	}
 

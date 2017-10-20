@@ -13,6 +13,8 @@ BombTile::BombTile()
 
 BombTile::~BombTile()
 {
+	delete m_pDamageAbleTile;
+	m_pDamageAbleTile = nullptr;
 }
 
 void BombTile::Draw()

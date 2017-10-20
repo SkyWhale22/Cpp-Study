@@ -1,9 +1,9 @@
 // Assignment_3_1.cpp
+#include <vld.h>
 #include "World.h"
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <vld.h>
 //---------------------------------------------------------------------------------------------------------------------
 // Game Design:
 // 
@@ -76,18 +76,16 @@
 int main()
 {
 	srand((unsigned int)time(nullptr));
-	World* world = World::GetInstance();
+	World* pWorld = World::GetInstance();
+
 	// create the world
-	world->Init(k_worldWidth, k_worldHeight);
-
-
-	//world->Init(k_worldWidth, k_worldHeight);
+	pWorld->Init(k_worldWidth, k_worldHeight);
 
 	// create the player
-	world->CreatePlayer();
+	pWorld->CreatePlayer();
 
 	// now that the player has been placed, generate the world
-	world->GenerateWorld();
+	pWorld->GenerateWorld();
 
     // main game loop
     /*while (!world->IsGameOver())
@@ -96,7 +94,8 @@ int main()
 		world->Update();
     }*/
 
-	world->FreeInstance();
+	pWorld->FreeInstance();
+	pWorld = nullptr;
     _getch();
 
 	return 0;

@@ -13,6 +13,12 @@ MimicTile::MimicTile()
 	m_pDamageAbleTile = new DamagingTile;
 }
 
+MimicTile::~MimicTile()
+{
+	delete m_pDamageAbleTile;
+	m_pDamageAbleTile = nullptr;
+}
+
 void MimicTile::Draw()
 {
 	m_tileSM.GetState()->PrintTile();

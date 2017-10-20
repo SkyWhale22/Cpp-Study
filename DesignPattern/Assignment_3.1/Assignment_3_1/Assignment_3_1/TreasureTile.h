@@ -16,7 +16,6 @@ class TreasureTile : public Tile
 
 public:
     TreasureTile();
-	~TreasureTile() {}
     virtual void Draw() override;
     virtual void OnEnter(Character* pPlayer) override;
 };

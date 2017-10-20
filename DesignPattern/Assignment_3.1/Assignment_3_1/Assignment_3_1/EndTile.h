@@ -10,7 +10,6 @@ class EndTile : public Tile
 	
 public:
 	EndTile();
-	~EndTile() {};
     virtual void Draw() override;
     virtual void OnEnter(Character* pPlayer) override;
 };

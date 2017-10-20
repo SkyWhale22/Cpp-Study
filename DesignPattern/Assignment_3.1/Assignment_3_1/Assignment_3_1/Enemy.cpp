@@ -11,12 +11,6 @@ Enemy::Enemy(int x, int y)
 	SetType();
 }
 
-
-Enemy::~Enemy()
-{
-	
-}
-
 void Enemy::RandomMove()
 {
 	int random = (rand() % 4) + 1;

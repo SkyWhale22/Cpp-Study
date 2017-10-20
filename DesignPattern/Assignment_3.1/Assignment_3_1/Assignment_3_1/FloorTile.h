@@ -8,7 +8,6 @@ class FloorTile : public Tile
 {
 public:
 	FloorTile() { type = TileType::k_floor; }
-	~FloorTile() {}
 	virtual void Draw() override;
 };
 

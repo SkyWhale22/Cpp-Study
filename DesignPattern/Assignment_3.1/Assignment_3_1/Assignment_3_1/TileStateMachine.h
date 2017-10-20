@@ -15,6 +15,8 @@ public:
 	};
 
 	TileStateMachine();
+	~TileStateMachine();
+
 	void ChangeState(State newState);
 	void PrintTile();
 	bool m_isExploaded;

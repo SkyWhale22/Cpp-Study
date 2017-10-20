@@ -9,6 +9,12 @@ TileStateMachine::TileStateMachine()
 {
 }
 
+TileStateMachine::~TileStateMachine()
+{
+	delete m_pState;
+	m_pState = nullptr;
+}
+
 void TileStateMachine::ChangeState(State newState)
 {
 	if (m_pState != nullptr)

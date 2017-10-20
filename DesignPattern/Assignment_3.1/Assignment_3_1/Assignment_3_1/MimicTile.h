@@ -15,7 +15,7 @@ private:
 
 public:
     MimicTile();
-	~MimicTile() {}
+	~MimicTile();
     virtual void Draw() override;
     virtual void OnEnter(Character* pCharacter) override;
 

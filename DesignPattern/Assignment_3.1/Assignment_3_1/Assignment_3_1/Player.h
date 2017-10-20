@@ -14,7 +14,6 @@ private:
 
 public:
 	Player(int x, int y);
-	~Player() {}
 	virtual bool IsDead() override { return (m_hitPoints <= 0); }
     virtual void Move(int deltaX, int deltaY) override;
 	virtual void Draw() override;

@@ -18,7 +18,7 @@
 using std::cout;
 using std::endl;
 
-World* World::world = nullptr;
+World* World::m_pWorld = nullptr;
 
 const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTiles] =
 {
@@ -72,6 +72,7 @@ void World::Init(int width, int height)
     }
 
 	// create and fill the grid with nothing
+	//m_ppGrid = new Tile*[width*height];
 	m_ppGrid = new Tile*[width*height];
 	for (int i = 0; i < width*height; ++i)
 	{
@@ -205,7 +206,6 @@ void World::Update()
         return;
     }
 
-	
 	for (int i = 0; i < 3; ++i)
 	{
 		int random = (rand() % 4) + 1;
@@ -297,7 +297,7 @@ bool World::IsPlayerNear(int enemyIndex)
 		}
 	}
 	
-	if (!foundPlayer)
+	if (!foundPlayer) 
 	{
 		for (int y = -5; y < 5; ++y)
 		{
