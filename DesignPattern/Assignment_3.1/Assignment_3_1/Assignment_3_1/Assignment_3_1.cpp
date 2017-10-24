@@ -1,4 +1,3 @@
-// Assignment_3_1.cpp
 #include <vld.h>
 #include "World.h"
 #include <time.h>
