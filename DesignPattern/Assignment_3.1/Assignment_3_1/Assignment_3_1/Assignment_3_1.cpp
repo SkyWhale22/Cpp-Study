@@ -32,20 +32,6 @@
 //---------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------
-// Assignment:
-// 
-// ***8) Add a teleporter tile.  It should work like this:
-//        a) Teleporter tiles always come in pairs.
-//        b) This pair is linked.  When the player steps onto one, he will be teleported to the other.
-//        c) There is a small chance you will get one or more teleporter pairs when the world is first generated.
-//           Play with the probability to make it feel right.
-//        d) Their symbol should be an ampersand (&).
-//        e) For this feature, you will be graded HEAVILY on how clean the teleporter's architecture has been 
-//           implemented.  If it works but the code is super messy and/or hacky, you might as well have not done at 
-//           all.
-//---------------------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------------------------------------------------
 // Your notes go here:
 // 
 //  No memory leak!
