@@ -6,5 +6,8 @@ class LightTank :
 public:
 	LightTank();
 	~LightTank();
+
+	void PrintEnemy() override;
+	void EnemyAction() override;
 };
 

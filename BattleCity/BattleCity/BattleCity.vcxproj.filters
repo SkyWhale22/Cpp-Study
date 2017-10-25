@@ -13,43 +13,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="World">
-      <UniqueIdentifier>{6f48e846-bc26-49cd-90d3-e52e27ce4983}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tank">
-      <UniqueIdentifier>{e887d636-f5ca-4785-a780-2fd7af785e73}</UniqueIdentifier>
+      <UniqueIdentifier>{34e2750f-7e29-488b-a21e-2c0d5eac394c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tank\Objects">
-      <UniqueIdentifier>{eec746e2-b130-4b20-a721-a467ee394e5a}</UniqueIdentifier>
+      <UniqueIdentifier>{48a3463b-3dfe-47df-b974-8a87b5ea17ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tank\EnemyTypes">
-      <UniqueIdentifier>{acfa4ef5-3f54-40d2-9c68-9ad50ce2f7fc}</UniqueIdentifier>
+    <Filter Include="Tank\Enemy Types">
+      <UniqueIdentifier>{c966e0eb-b37d-4feb-aef0-fa3e95cebda5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tank\EnemyTypes\TypeMachine">
-      <UniqueIdentifier>{2369071c-86ff-43bc-a8df-299d05541fc6}</UniqueIdentifier>
+    <Filter Include="Tank\Tank States">
+      <UniqueIdentifier>{7abd106d-2f28-4c61-847b-c5ac9a47c882}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tank\EnemyTypes\Types">
-      <UniqueIdentifier>{659289a6-c370-421f-a75d-50e4c7b5a2bc}</UniqueIdentifier>
+    <Filter Include="Tank\Modules">
+      <UniqueIdentifier>{4beb13f3-7351-4b02-bb8c-0ac43ec3f921}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tank\TankModule">
-      <UniqueIdentifier>{d09c8917-0664-4876-990e-43068bf3bfc6}</UniqueIdentifier>
+    <Filter Include="Tile">
+      <UniqueIdentifier>{96820484-f777-4635-ab2d-cd14b7bab885}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SystemModules">
-      <UniqueIdentifier>{4a463cc9-d627-4b3a-a6e0-7a372a40ef46}</UniqueIdentifier>
+    <Filter Include="Tile\Objects">
+      <UniqueIdentifier>{a3e90d9b-339a-4b4a-9d96-163409f77bee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tiles">
-      <UniqueIdentifier>{065e746b-bbdc-420e-a6d5-f4d24fa8e637}</UniqueIdentifier>
+    <Filter Include="World">
+      <UniqueIdentifier>{dc8bd4bc-381e-4f2c-8daf-bb6cf84c830f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System Modules">
+      <UniqueIdentifier>{76059231-50fe-4385-a98e-c0f4c52e3459}</UniqueIdentifier>
     </Filter>
     <Filter Include="XML Datas">
-      <UniqueIdentifier>{0e6aa4f7-dd4b-4d93-9384-c9e18cd918ae}</UniqueIdentifier>
+      <UniqueIdentifier>{b0dee23c-f8cb-4f8c-adf0-45c4a200fdca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleCity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>World</Filter>
+    <ClCompile Include="Input.cpp">
+      <Filter>System Modules</Filter>
     </ClCompile>
     <ClCompile Include="Tank.cpp">
       <Filter>Tank\Objects</Filter>
@@ -60,91 +60,127 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Tank\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyTypeMachine.cpp">
-      <Filter>Tank\EnemyTypes\TypeMachine</Filter>
-    </ClCompile>
-    <ClCompile Include="BonusTank.cpp">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyType.cpp">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="HeavyTank.cpp">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="LightTank.cpp">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClCompile>
     <ClCompile Include="CannonShell.cpp">
       <Filter>Tank\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="TankAttack.cpp">
-      <Filter>Tank\TankModule</Filter>
+    <ClCompile Include="EnemyTypeMachine.cpp">
+      <Filter>Tank\Enemy Types</Filter>
     </ClCompile>
-    <ClCompile Include="BrickTile.cpp">
-      <Filter>Tiles</Filter>
+    <ClCompile Include="HeavyTank.cpp">
+      <Filter>Tank\Enemy Types</Filter>
     </ClCompile>
-    <ClCompile Include="IronTile.cpp">
-      <Filter>Tiles</Filter>
+    <ClCompile Include="LightTank.cpp">
+      <Filter>Tank\Enemy Types</Filter>
+    </ClCompile>
+    <ClCompile Include="DownSide.cpp">
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftSide.cpp">
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="RightSide.cpp">
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="UpSide.cpp">
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="TankState.cpp">
+      <Filter>Tank\Tank States</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Tiles</Filter>
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="TankAttack.cpp">
+      <Filter>Tank\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="BrickTile.cpp">
+      <Filter>Tile\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="IronTile.cpp">
+      <Filter>Tile\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>SystemModules</Filter>
+    <ClCompile Include="TankStateMachine.cpp">
+      <Filter>Tank\Tank States</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="World.h">
-      <Filter>World</Filter>
-    </ClInclude>
-    <ClInclude Include="Tank.h">
-      <Filter>Tank\Objects</Filter>
+    <ClInclude Include="Input.h">
+      <Filter>System Modules</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Tank\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
       <Filter>Tank\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Tank\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyTypeMachine.h">
-      <Filter>Tank\EnemyTypes\TypeMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="BonusTank.h">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyType.h">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="HeavyTank.h">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="LightTank.h">
-      <Filter>Tank\EnemyTypes\Types</Filter>
-    </ClInclude>
     <ClInclude Include="CannonShell.h">
       <Filter>Tank\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="HeavyTank.h">
+      <Filter>Tank\Enemy Types</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyType.h">
+      <Filter>Tank\Enemy Types</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyTypeMachine.h">
+      <Filter>Tank\Enemy Types</Filter>
+    </ClInclude>
+    <ClInclude Include="DownSide.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftSide.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
+    <ClInclude Include="RightSide.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
+    <ClInclude Include="TankState.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
+    <ClInclude Include="TankStateMachine.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
+    <ClInclude Include="UpSide.h">
+      <Filter>Tank\Tank States</Filter>
+    </ClInclude>
     <ClInclude Include="TankAttack.h">
-      <Filter>Tank\TankModule</Filter>
-    </ClInclude>
-    <ClInclude Include="IronTile.h">
-      <Filter>Tiles</Filter>
-    </ClInclude>
-    <ClInclude Include="BrickTile.h">
-      <Filter>Tiles</Filter>
+      <Filter>Tank\Modules</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Tiles</Filter>
+      <Filter>Tile\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="IronTile.h">
+      <Filter>Tile\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="BrickTile.h">
+      <Filter>Tile\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="LightTank.h">
+      <Filter>Tank\Enemy Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>SystemModules</Filter>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +188,9 @@
       <Filter>XML Datas</Filter>
     </Xml>
     <Xml Include="SpriteData.xml">
+      <Filter>XML Datas</Filter>
+    </Xml>
+    <Xml Include="TankStatus.xml">
       <Filter>XML Datas</Filter>
     </Xml>
   </ItemGroup>

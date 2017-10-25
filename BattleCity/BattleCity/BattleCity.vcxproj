@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B0A88164-A62B-4B3C-85AB-4FB99AF31365}</ProjectGuid>
+    <ProjectGuid>{9893C4BA-9801-4A3B-889C-D995493BF519}</ProjectGuid>
     <RootNamespace>BattleCity</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -112,44 +112,57 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BattleCity.cpp" />
-    <ClCompile Include="BonusTank.cpp" />
     <ClCompile Include="BrickTile.cpp" />
     <ClCompile Include="CannonShell.cpp" />
+    <ClCompile Include="DownSide.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EnemyType.cpp" />
     <ClCompile Include="EnemyTypeMachine.cpp" />
     <ClCompile Include="HeavyTank.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="IronTile.cpp" />
+    <ClCompile Include="LeftSide.cpp" />
     <ClCompile Include="LightTank.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RightSide.cpp" />
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="TankAttack.cpp" />
+    <ClCompile Include="TankState.cpp" />
+    <ClCompile Include="TankStateMachine.cpp" />
     <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="UpSide.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BonusTank.h" />
     <ClInclude Include="BrickTile.h" />
     <ClInclude Include="CannonShell.h" />
+    <ClInclude Include="DownSide.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyType.h" />
     <ClInclude Include="EnemyTypeMachine.h" />
     <ClInclude Include="HeavyTank.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="IronTile.h" />
+    <ClInclude Include="LeftSide.h" />
     <ClInclude Include="LightTank.h" />
+    <ClInclude Include="Macros.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RightSide.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="TankAttack.h" />
+    <ClInclude Include="TankState.h" />
+    <ClInclude Include="TankStateMachine.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="UpSide.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MapData.xml" />
     <Xml Include="SpriteData.xml" />
+    <Xml Include="TankStatus.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

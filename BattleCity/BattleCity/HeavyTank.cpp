@@ -10,3 +10,11 @@ HeavyTank::HeavyTank()
 HeavyTank::~HeavyTank()
 {
 }
+
+void HeavyTank::PrintEnemy()
+{
+}
+
+void HeavyTank::EnemyAction()
+{
+}

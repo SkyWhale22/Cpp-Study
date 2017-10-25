@@ -6,5 +6,8 @@ class HeavyTank :
 public:
 	HeavyTank();
 	~HeavyTank();
+
+	void PrintEnemy() override;
+	void EnemyAction() override;
 };
 

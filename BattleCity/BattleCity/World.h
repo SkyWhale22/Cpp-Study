@@ -1,10 +1,20 @@
 #pragma once
+
+#include "Map.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Tank.h"
+//#include <Windows.h>
+
 class World
 {
 private:
 	static World* m_pWorld;
 	World();
 	~World();
+
+	Player* m_pPlayer;
+	Tank* m_pTank;
 public:
 
 	static World* GetInstance()
@@ -16,5 +26,8 @@ public:
 	}
 
 	void FreeInstance() { delete m_pWorld; }
+
+	void PrintTank();
+	void MoveTank();
 };
 
