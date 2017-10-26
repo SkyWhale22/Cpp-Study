@@ -4,7 +4,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Tank.h"
-//#include <Windows.h>
+#include "SpriteRenderer.h"
+#include <Windows.h>
 
 class World
 {
@@ -13,8 +14,14 @@ private:
 	World();
 	~World();
 
-	Player* m_pPlayer;
-	Tank* m_pTank;
+	Tank* m_pPlayer;
+	SpriteRenderer m_screenManager;
+
+	CONSOLE_SCREEN_BUFFER_INFO m_screenBuffer;
+	HANDLE m_hConsole;
+	CONSOLE_CURSOR_INFO m_cursorInfo;
+	COORD m_pos;
+
 public:
 
 	static World* GetInstance()
@@ -25,9 +32,11 @@ public:
 		return m_pWorld;
 	}
 
+	void GameProcess();
 	void FreeInstance() { delete m_pWorld; }
 
 	void PrintTank();
+	void PrintMap();
 	void MoveTank();
 };
 

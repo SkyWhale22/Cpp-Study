@@ -14,8 +14,12 @@ public:
 	~Player();
 
 	void PrintTank() override;
-	void Move() override;
+	void Move(int x, int y) override;
 	void Action() override;
-	void Update() override;
+	bool Update() override;
+
+	void ReadSprite();
+	bool CheckMovable();
 };
+
 

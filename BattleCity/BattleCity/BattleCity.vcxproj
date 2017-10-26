@@ -125,6 +125,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RightSide.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="TankAttack.cpp" />
     <ClCompile Include="TankState.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="UpSide.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +152,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RightSide.h" />
+    <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="TankAttack.h" />
     <ClInclude Include="TankState.h" />
@@ -157,6 +160,7 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="UpSide.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ void Enemy::PrintTank()
 {
 }
 
-void Enemy::Move()
+void Enemy::Move(int x, int y)
 {
 }
 

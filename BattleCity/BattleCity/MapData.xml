@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Map>
-  +------------------------------------------+
-  |                                          |
-  |                                          |
-  |                                          |
-  |                                          |
-  |    BBB   BBB                 BBB   BBB   |
-  |    BBB   BBB                 BBB   BBB   |
-  |    BBB   BBB                 BBB   BBB   |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |                                          |
-  |                                          |
-  |                                          |
-  |III   BBBBBB   BBBBBBBBBBBB   BBBBBB   III|
-  |III   BBBBBB   BBBBBBBBBBBB   BBBBBB   III|
-  |III   BBBBBB   BBBBBBBBBBBB   BBBBBB   III|
-  |                                          |
-  |                                          |
-  |                                          |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |    BBB   BBB     IIIIII      BBB   BBB   |
-  |    BBB   BBB                 BBB   BBB   |
-  |    BBB   BBB                 BBB   BBB   |
-  |    BBB   BBB                 BBB   BBB   |
-  |                                          |
-  |                                          |
-  |                                          |
-  |                                          |
-  +------------------------------------------+
+  <Basic>
+    +------------------------------------------+
+    |+----------------------------------------+|
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    ||                                        ||
+    |+----------------------------------------+|
+    +------------------------------------------+
+  </Basic>
+  <EndOfMap>
+    <North>3</North>
+    <South>15</South>
+    <East>42</East>
+    <West>6</West>
+  </EndOfMap>
 </Map>

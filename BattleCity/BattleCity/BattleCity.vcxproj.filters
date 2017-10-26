@@ -51,9 +51,6 @@
     <ClCompile Include="Input.cpp">
       <Filter>System Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Tank.cpp">
-      <Filter>Tank\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Tank\Objects</Filter>
     </ClCompile>
@@ -87,9 +84,6 @@
     <ClCompile Include="TankState.cpp">
       <Filter>Tank\Tank States</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Tank\Tank States</Filter>
-    </ClCompile>
     <ClCompile Include="TankAttack.cpp">
       <Filter>Tank\Modules</Filter>
     </ClCompile>
@@ -109,6 +103,18 @@
       <Filter>Tank\Tank States</Filter>
     </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Tile\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -180,6 +186,12 @@
       <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

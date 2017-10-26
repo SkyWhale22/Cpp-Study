@@ -1,15 +1,16 @@
 #include "Player.h"
 #include "Macros.h"
 #include "Input.h"
+#include "Map.h"
 #include <conio.h>
-#include "tinyxml2.h"
-using namespace tinyxml2;
 
 Player::Player()
 {
+	m_HP = 5;
+	m_position.Set(24, 15);
 	m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+	ReadSprite();
 }
-
 
 Player::~Player()
 {
@@ -17,70 +18,69 @@ Player::~Player()
 
 void Player::PrintTank()
 {
-	m_state.GetState()->ReadSprite("PlayerTank");
-	m_state.GetState()->PrintSprite();
+	ReadSprite();
 }
 
-void Player::Move()
+void Player::Move(int x, int y)
 {
-	/*
-	while (true)
-	{
-		char input = m_pInput->ChangeDirection();
-
-		switch (input)
-		{
-		case 's':	// Down
-			ReadXML(Direction::kDown);
-			break;
-		case 'a':	// Left
-			ReadXML(Direction::kLeft);
-			break;
-		case 'd':	// Right
-			ReadXML(Direction::kRight);
-			break;
-		case 'w':	// Up
-			ReadXML(Direction::kUp);
-			break;
-		default:
-			break;
-		}
-
-		if (input == 'q') break;
-	}
-	*/
+	m_position.Set(m_position.GetX() + x, m_position.GetY() + y);
 }
 
 void Player::Action()
 {
 }
 
-void Player::Update()
+bool Player::Update()
 {
-	while (true)
+	char input = m_pInput->GetInput();
+
+	switch (input)
 	{
-		char input = m_pInput->GetInput();
+	case 's':	// Down
+		m_state.ChangeDirection(TankStateMachine::Direction::kDown);
 
-		switch (input)
-		{
-		case 's':	// Down
-			m_state.ChangeDirection(TankStateMachine::Direction::kDown);
-			break;
-		case 'a':	// Left
-			m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
-			break;
-		case 'd':	// Right
-			m_state.ChangeDirection(TankStateMachine::Direction::kRight);
-			break;
-		case 'w':	// Up
-			m_state.ChangeDirection(TankStateMachine::Direction::kUp);
-			break;
-		}
+		if (Map::GetInstance()->CheckEndOfMap(input, m_position.GetY()) == false)
+			Move(0, 1);
+		break;
 
-		if (input == 'q') break;
+	case 'a':	// Left
+		m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
 
-		PrintTank();
+		if (Map::GetInstance()->CheckEndOfMap(input, m_position.GetX()) == false)
+			Move(-1, 0);
+		break;
+
+	case 'd':	// Right
+		m_state.ChangeDirection(TankStateMachine::Direction::kRight);
+
+		if (Map::GetInstance()->CheckEndOfMap(input, m_position.GetX()) == false)
+			Move(1, 0);
+		break;
+
+	case 'w':	// Up
+		m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+
+		if (Map::GetInstance()->CheckEndOfMap(input, m_position.GetY()) == false)
+			Move(0, -1);
+		break;
 	}
+
+	PrintTank();
+
+	if (input == 'q')
+		return false;
+	else
+		return true;
+}
+
+void Player::ReadSprite()
+{
+	m_state.GetState()->ReadSprite("PlayerTank");
+}
+
+bool Player::CheckMovable()
+{
+	return false;
 }
 
 /*

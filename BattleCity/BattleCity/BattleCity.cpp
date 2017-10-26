@@ -1,19 +1,16 @@
 #include <vld.h>
 #include <iostream>
 #include "World.h"
-#include "Tank.h"
-#include "Player.h"
+#include <Windows.h>
 
 int main()
 {
+	system(" mode  con lines=25  cols=80 ");
+	
 	World* pWorld = World::GetInstance();
-	
-
-	Player testPlayer;
-	testPlayer.Update();
-	//testPlayer.Move();
-	
+	pWorld->GameProcess();
 	pWorld->FreeInstance();
+
 	system("pause");
 	return 0;
 }
