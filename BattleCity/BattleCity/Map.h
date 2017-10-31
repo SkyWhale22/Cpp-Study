@@ -1,36 +1,36 @@
 #pragma once
 #include "tinyxml2.h"
+#include <string>
+#include <unordered_map>
+#include "TankStateMachine.h"
+#include "CannonShell.h"
 
 using tinyxml2::XMLDocument;
 using tinyxml2::XMLElement;
 
+
+class Vector2;
+class TankStateMachine;
+
+typedef std::unordered_map<std::string, std::string> ArenaMap;
+
 class Map
 {
+public:
+	Map();
+	~Map();
 private:
-	static Map* m_pMap;
-
 	XMLDocument doc;
 	XMLElement* pRoot;
 
-	Map();
-	~Map();
+	ArenaMap m_arena;
 
 public:
-	static Map* GetInstance()
-	{
-		if (m_pMap == nullptr)
-			m_pMap = new Map();
-
-		return m_pMap;
-	}
-
-	void FreeInstance()
-	{
-		delete m_pMap;
-		m_pMap = nullptr;
-	}
-
 	void ReadMap();
-	bool CheckEndOfMap(char ch, int oneOfPosition);
+	//std::unordered_map<std::string&, std::string&> GetMap(std::string spriteName);
+	std::string GetMapSprite(std::string spriteName);
+
+	bool CheckEndOfMapForTank(TankStateMachine::Direction dir, Vector2* pos);
+	bool CheckEndOfMapForShell(CannonShell::MovingDirection dir, Vector2* pos);
 };
 

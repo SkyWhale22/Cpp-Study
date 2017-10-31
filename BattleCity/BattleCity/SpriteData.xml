@@ -2,31 +2,12 @@
 
 <Sprite>
   <Tank>
-    <PlayerTank>
       <Up>#|##O## #</Up>
       <Down># ##O##|#</Down>
       <Right>### O-###</Right>
       <Left>###-O ###</Left>
-    </PlayerTank>
-    <LightTank>
-      <Up>#|##L## #</Up>
-      <Down># ##L##|#</Down>
-      <Right>### L-###</Right>
-      <Left>###-L ###</Left>
-    </LightTank>
-    <HeavyTank>
-      <Up>#|##H## #</Up>
-      <Down># ##H##|#</Down>
-      <Right>### H-###</Right>
-      <Left>###-H ###</Left>
-    </HeavyTank>
-    <BonusTank>
-      <Up># ##B## #</Up>
-      <Down># ##B## #</Down>
-      <Right>### B ###</Right>
-      <Left>### B ###</Left>
-    </BonusTank>
   </Tank>
+  <CannonShell>@</CannonShell>
   <Tile>
     <BrickWall>BBBBBBBBB</BrickWall>
     <IronWall>IIIIIIIII</IronWall>

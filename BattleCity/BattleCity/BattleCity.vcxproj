@@ -114,14 +114,12 @@
     <ClCompile Include="BattleCity.cpp" />
     <ClCompile Include="BrickTile.cpp" />
     <ClCompile Include="CannonShell.cpp" />
+    <ClCompile Include="CollisionChecker.cpp" />
     <ClCompile Include="DownSide.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EnemyTypeMachine.cpp" />
-    <ClCompile Include="HeavyTank.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="IronTile.cpp" />
     <ClCompile Include="LeftSide.cpp" />
-    <ClCompile Include="LightTank.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RightSide.cpp" />
@@ -139,15 +137,12 @@
   <ItemGroup>
     <ClInclude Include="BrickTile.h" />
     <ClInclude Include="CannonShell.h" />
+    <ClInclude Include="CollisionChecker.h" />
     <ClInclude Include="DownSide.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EnemyType.h" />
-    <ClInclude Include="EnemyTypeMachine.h" />
-    <ClInclude Include="HeavyTank.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="IronTile.h" />
     <ClInclude Include="LeftSide.h" />
-    <ClInclude Include="LightTank.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />

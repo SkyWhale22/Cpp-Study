@@ -15,7 +15,6 @@ void LeftSide::ReadSprite(char* pName)
 {
 	TankState::ReadSprite(pName);
 
-	pTank = pType->FirstChildElement(pName);
 	pDir = pTank->FirstChildElement("Left");
 
 	m_sprite = pDir->GetText();

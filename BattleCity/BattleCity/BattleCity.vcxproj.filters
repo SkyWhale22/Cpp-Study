@@ -19,9 +19,6 @@
     <Filter Include="Tank\Objects">
       <UniqueIdentifier>{48a3463b-3dfe-47df-b974-8a87b5ea17ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tank\Enemy Types">
-      <UniqueIdentifier>{c966e0eb-b37d-4feb-aef0-fa3e95cebda5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tank\Tank States">
       <UniqueIdentifier>{7abd106d-2f28-4c61-847b-c5ac9a47c882}</UniqueIdentifier>
     </Filter>
@@ -59,15 +56,6 @@
     </ClCompile>
     <ClCompile Include="CannonShell.cpp">
       <Filter>Tank\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyTypeMachine.cpp">
-      <Filter>Tank\Enemy Types</Filter>
-    </ClCompile>
-    <ClCompile Include="HeavyTank.cpp">
-      <Filter>Tank\Enemy Types</Filter>
-    </ClCompile>
-    <ClCompile Include="LightTank.cpp">
-      <Filter>Tank\Enemy Types</Filter>
     </ClCompile>
     <ClCompile Include="DownSide.cpp">
       <Filter>Tank\Tank States</Filter>
@@ -117,6 +105,9 @@
     <ClCompile Include="SpriteRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Input.h">
@@ -133,15 +124,6 @@
     </ClInclude>
     <ClInclude Include="CannonShell.h">
       <Filter>Tank\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="HeavyTank.h">
-      <Filter>Tank\Enemy Types</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyType.h">
-      <Filter>Tank\Enemy Types</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyTypeMachine.h">
-      <Filter>Tank\Enemy Types</Filter>
     </ClInclude>
     <ClInclude Include="DownSide.h">
       <Filter>Tank\Tank States</Filter>
@@ -176,9 +158,6 @@
     <ClInclude Include="World.h">
       <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="LightTank.h">
-      <Filter>Tank\Enemy Types</Filter>
-    </ClInclude>
     <ClInclude Include="Macros.h">
       <Filter>World</Filter>
     </ClInclude>
@@ -192,6 +171,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionChecker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

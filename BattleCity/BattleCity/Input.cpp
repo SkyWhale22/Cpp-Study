@@ -1,20 +1,20 @@
 ﻿#include "Input.h"
 #include <iostream>
 #include <conio.h>
-
+#include <Windows.h>
 using std::cout;
 using std::cin;
 using std::endl;
 
 char Input::GetInput()
 {
-	while (true)
+	char ch;
+
+	if (_kbhit())
 	{
-		if (_kbhit())	// True, only if when gets input.
-		{
-			system("cls");
-			char ch = _getch();	// Saves input itto ch.
-			return ch;
-		}
+		ch = _getch();
+		return ch;
 	}
+	else
+		return ' ';
 }

@@ -3,6 +3,7 @@
 #include <string>
 #include "TankStateMachine.h"
 #include "Vector2.h"
+#include "CannonShell.h"
 
 using std::cout;
 using std::cin;
@@ -12,20 +13,32 @@ class Vector2;
 
 class Tank
 {
+
+private:
+	CannonShell* m_pShells;
+
+
+
 protected:
 	int m_HP;
 	Vector2 m_position;
-
 	TankStateMachine m_state;
+	CannonShell::MovingDirection m_shellDir;
+
 public:
-	virtual ~Tank() {};
+	int m_shootCount = 2;
+	virtual ~Tank();
 
-	virtual void PrintTank() = 0;
-	virtual void Move(int x, int y) = 0;
-	virtual void Action() = 0;
-	virtual bool Update() = 0;
+	void ReadTankSprite();
+	void Move(int x, int y);
 
+	void Shoot();
+	void MoveAllShells();
+	void DeleteShell();
+	void IncreaseShootCount() { ++m_shootCount; }
 	TankStateMachine* GetStateMachine() { return &m_state; };
 	
 	Vector2* GetVector();
+
+	CannonShell* GetShell() { return m_pShells; }
 };

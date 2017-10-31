@@ -3,8 +3,11 @@
 #include <Windows.h>
 #include <string>
 #include <unordered_map>
+#include "TankStateMachine.h"
+#include "CannonShell.h"
 
 class Vector2;
+typedef std::string(*MapPrinter2)();
 
 class SpriteRenderer
 {
@@ -30,8 +33,20 @@ public:
 	~SpriteRenderer();
 
 	void Init();
-	void DrawSprite(std::string& sprite, Vector2 pos);
+	
+	void PrintTanks(std::string& sprite, TankStateMachine::Direction dir,  Vector2 pos, Color color);
+	void PrintShells(std::string& sprite, CannonShell::MovingDirection dir, Vector2 pos);
+	
+	
+	
+	void DrawSprite(std::string& sprite, Color color);
+	
 	void PrintOnCoord(std::string& sprite, Vector2 pos);
+	void PrintOnInitial(std::string& sprite);
 	void SetCursorPosition(Vector2 pos);
+
+
+	void GoToXY(int x, int y);
+	void PrintArena(std::string sprite);
 };
 

@@ -37,6 +37,8 @@ void TankStateMachine::ChangeDirection(Direction newDir)
 	default:
 		break;
 	}
+
+	m_dir = newDir;
 }
 
 void TankStateMachine::PrintSprite(char* pName)

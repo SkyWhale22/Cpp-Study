@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Map>
-  <Basic>
-    +------------------------------------------+
-    |+----------------------------------------+|
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    ||                                        ||
-    |+----------------------------------------+|
-    +------------------------------------------+
-  </Basic>
+  <MapStructure>
+    <OutLine>+------------------------------------+</OutLine>
+    <OutLineSide>||||||||||||||||||</OutLineSide>
+    <TopBottom>+----------------------------------+</TopBottom>	
+    <Side>||||||||||||||||</Side>
+  </MapStructure>   
   <EndOfMap>
-    <North>3</North>
-    <South>15</South>
-    <East>42</East>
-    <West>6</West>
+    <ForTank>
+      <North>2</North>
+      <South>15</South>
+      <East>34</East>
+      <West>3</West>
+      <Nothing>0</Nothing>
+    </ForTank>
+    <ForShell>
+      <North>1</North>
+      <South>18</South>
+      <East>37</East>
+      <West>2</West>
+      <Nothing>0</Nothing>
+    </ForShell>
   </EndOfMap>
 </Map>
