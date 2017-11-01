@@ -13,9 +13,11 @@ int main()
 	
 	World* pWorld = World::GetInstance();
 	pWorld->GameProcess();
+	system("cls");
+	pWorld->PrintResult();
+
 	pWorld->FreeInstance();
 
-	system("cls");
 	system("pause");
 	return 0;
 }

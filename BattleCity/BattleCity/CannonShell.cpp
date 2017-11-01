@@ -32,7 +32,7 @@ void CannonShell::SetDirection(MovingDirection dir, Vector2 & pos)
 		m_position.Set(pos.GetX() + 2, pos.GetY() + 1);
 		break;
 	case CannonShell::MovingDirection::KUp:
-		m_position.Set(pos.GetX() + 1, pos.GetY() + 1);
+		m_position.Set(pos.GetX() + 1, pos.GetY() - 1);
 		break;
 	case CannonShell::MovingDirection::kDown:
 		m_position.Set(pos.GetX() + 1, pos.GetY() + 2);

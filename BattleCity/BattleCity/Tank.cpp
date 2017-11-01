@@ -6,9 +6,10 @@ Tank::~Tank()
 	m_pShells = nullptr;
 }
 
-Vector2 * Tank::GetVector()
+
+void Tank::SetPosition(int x, int y)
 {
-	return &m_position;
+	m_position.Set(x, y);
 }
 
 void Tank::ReadTankSprite()

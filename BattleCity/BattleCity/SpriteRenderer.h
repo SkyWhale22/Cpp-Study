@@ -16,7 +16,7 @@ public:
 	{
 		kYellow,
 		kWhite,
-		kBrown,
+		kRed,
 		kSilver
 	};
 
@@ -36,7 +36,7 @@ public:
 	
 	void PrintTanks(std::string& sprite, TankStateMachine::Direction dir,  Vector2 pos, Color color);
 	void PrintShells(std::string& sprite, CannonShell::MovingDirection dir, Vector2 pos);
-	
+	void PrintEmptySpace(Vector2 pos);
 	
 	
 	void DrawSprite(std::string& sprite, Color color);
@@ -48,5 +48,7 @@ public:
 
 	void GoToXY(int x, int y);
 	void PrintArena(std::string sprite);
+
+	void GameOverMessage();
 };
 

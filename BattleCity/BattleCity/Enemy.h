@@ -13,5 +13,7 @@ public:
 	void MoveEnemyTank();
 	void HowManyTimesToMove();
 	void SetEnemyStatus();
+
+	void SetRandomPosition();
 };
 

@@ -96,9 +96,6 @@
     <ClCompile Include="Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tank.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Tile\Objects</Filter>
     </ClCompile>
@@ -107,6 +104,9 @@
     </ClCompile>
     <ClCompile Include="CollisionChecker.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Tank\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

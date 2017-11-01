@@ -10,7 +10,7 @@ std::unordered_map<SpriteRenderer::Color, unsigned char> SpriteRenderer::m_color
 {
 	{ SpriteRenderer::Color::kYellow, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY },
 	{ SpriteRenderer::Color::kWhite, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY },
-	{ SpriteRenderer::Color::kBrown,  FOREGROUND_RED & FOREGROUND_BLUE | BACKGROUND_BLUE | FOREGROUND_INTENSITY | BACKGROUND_INTENSITY },
+	{ SpriteRenderer::Color::kRed,  FOREGROUND_RED },
 	{ SpriteRenderer::Color::kSilver, 0x0009 }
 };
 
@@ -117,6 +117,18 @@ void SpriteRenderer::PrintShells(std::string& sprite, CannonShell::MovingDirecti
 	}
 }
 
+void SpriteRenderer::PrintEmptySpace(Vector2 pos)
+{
+	for (int i = -1; i < 4; ++i)
+	{
+		for (int j = -1; j < 4; ++j)
+		{
+			GoToXY(pos.GetX() + i, pos.GetY() + j);
+			cout << " ";
+		}
+	}
+}
+
 void SpriteRenderer::PrintOnInitial(std::string& sprite)
 {
 	m_pos.X = 0;
@@ -215,3 +227,25 @@ void SpriteRenderer::PrintArena(std::string sprite)
 	}
 }
 
+void SpriteRenderer::GameOverMessage()
+{
+	GoToXY(10, 9);
+	std::cout << "+-------------------+";
+
+	GoToXY(10, 10);
+	std::cout << "|";
+
+	GoToXY(16, 10);
+	SetConsoleTextAttribute(m_hConsole, m_colorMap[Color::kRed]);
+	std::cout << "Game Over";
+	SetConsoleTextAttribute(m_hConsole, m_colorMap[Color::kWhite]);
+
+	GoToXY(30, 10);
+	std::cout << "|";
+
+	GoToXY(10, 11);
+	std::cout << "+-------------------+";
+
+	GoToXY(2, 5);
+	std::cout << "|";
+}

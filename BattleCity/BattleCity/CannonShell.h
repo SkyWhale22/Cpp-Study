@@ -36,6 +36,6 @@ public:
 
 	std::string& GetSprite() { return m_sprite; }
 	MovingDirection GetDirection() { return m_dir; }
-	Vector2 GetPosition() { return m_position; }
+	Vector2* GetPosition() { return &m_position; }
 };
 

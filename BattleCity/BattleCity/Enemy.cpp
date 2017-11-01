@@ -2,9 +2,9 @@
 
 Enemy::Enemy()
 {
-	SetEnemyStatus();
+	SetRandomPosition();
 	HowManyTimesToMove();
-	m_position.Set(5, 3);
+
 	ReadTankSprite();
 }
 
@@ -82,6 +82,34 @@ void Enemy::SetEnemyStatus()
 		Shoot();
 
 	ReadTankSprite();
+}
+
+void Enemy::SetRandomPosition()
+{
+	int random = rand() % 4;
+
+
+	switch (random)
+	{
+	case 0:
+		SetPosition(4, 3);
+		m_state.ChangeDirection(TankStateMachine::Direction::kDown);
+		break;
+	case 1:
+		SetPosition(33, 3);
+		m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
+		break;
+	case 2:
+		SetPosition(4, 14);
+		m_state.ChangeDirection(TankStateMachine::Direction::kRight);
+		break;
+	case 3:
+		SetPosition(33, 14);
+		m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+		break;
+	default:
+		break;
+	}
 }
 
 void Enemy::MoveEnemyTank()
