@@ -233,15 +233,14 @@ void SpriteRenderer::GameOverMessage()
 	std::cout << "+-------------------+";
 
 	GoToXY(10, 10);
-	std::cout << "|";
+	std::cout << "|      ";
 
-	GoToXY(16, 10);
 	SetConsoleTextAttribute(m_hConsole, m_colorMap[Color::kRed]);
 	std::cout << "Game Over";
 	SetConsoleTextAttribute(m_hConsole, m_colorMap[Color::kWhite]);
 
-	GoToXY(30, 10);
-	std::cout << "|";
+	GoToXY(26, 10);
+	std::cout << "    |";
 
 	GoToXY(10, 11);
 	std::cout << "+-------------------+";

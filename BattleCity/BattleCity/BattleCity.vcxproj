@@ -115,6 +115,12 @@
     <ClCompile Include="BrickTile.cpp" />
     <ClCompile Include="CannonShell.cpp" />
     <ClCompile Include="CollisionChecker.cpp" />
+    <ClCompile Include="CommandEscape.cpp" />
+    <ClCompile Include="CommandFire.cpp" />
+    <ClCompile Include="CommandMoveDown.cpp" />
+    <ClCompile Include="CommandMoveLeft.cpp" />
+    <ClCompile Include="CommandMoveRight.cpp" />
+    <ClCompile Include="CommandMoveUp.cpp" />
     <ClCompile Include="DownSide.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -138,6 +144,12 @@
     <ClInclude Include="BrickTile.h" />
     <ClInclude Include="CannonShell.h" />
     <ClInclude Include="CollisionChecker.h" />
+    <ClInclude Include="CommandEscape.h" />
+    <ClInclude Include="CommandFire.h" />
+    <ClInclude Include="CommandMoveDown.h" />
+    <ClInclude Include="CommandMoveLeft.h" />
+    <ClInclude Include="CommandMoveRight.h" />
+    <ClInclude Include="CommandMoveUp.h" />
     <ClInclude Include="DownSide.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Input.h" />
@@ -145,7 +157,11 @@
     <ClInclude Include="LeftSide.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="PC.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Playable.h" />
+    <ClInclude Include="TankCommand.h" />
     <ClInclude Include="RightSide.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="Tank.h" />

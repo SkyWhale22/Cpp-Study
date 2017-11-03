@@ -1,7 +1,7 @@
 ﻿#include "Input.h"
 #include <iostream>
 #include <conio.h>
-#include <Windows.h>
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -16,5 +16,5 @@ char Input::GetInput()
 		return ch;
 	}
 	else
-		return ' ';
+		return NULL;
 }

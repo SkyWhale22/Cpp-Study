@@ -7,8 +7,14 @@
 #include <conio.h>
 #include <Windows.h>
 #include "TankStateMachine.h"
+
 World* World::m_pWorld = nullptr;
 
+//----------------------------------------------------------
+// TODO:
+//	Making a vector that contains every tanks.
+//	So that I could print tanks in one shot.
+//----------------------------------------------------------
 World::World()
 {
 	m_pPlayer = new Player();
@@ -34,20 +40,19 @@ World::~World()
 	{
 		delete m_pEnemy[i];
 		m_pEnemy[i] = nullptr;
-
 	}
 }
 
 void World::GameProcess()
 {
-	char input;
+	char input = NULL;
 
 	//---------------------------------------
 	// Let's change it to function pointer
 	//---------------------------------------
 	while (true)
 	{
-		Sleep(30); 
+		Sleep(47); 
 
 		//-------------------------------------------------
 		// Print eveny stuffs.
@@ -61,11 +66,8 @@ void World::GameProcess()
 			PrintTank(m_pEnemy[i], SpriteRenderer::Color::kSilver);
 		}
 
-		input = m_pInput->GetInput();
-		
 		// Changes player's position regarding as input.
-		m_pPlayer->GetInput(input);
-
+		m_pPlayer->Update();
 
 		// MoveE
 		PlayerMovement();
@@ -89,7 +91,7 @@ void World::GameProcess()
 
 		ShellStatusCheck();
 		// Escapes this loop
-		if (input == 'q' || m_pPlayer->GetHP() <= 0)
+		if (m_pPlayer->CheckToEscape() == true || m_pPlayer->GetHP() <= 0)
 		{
 			m_screenManager.GameOverMessage();
 			_getch();
@@ -102,10 +104,6 @@ void World::GameProcess()
 bool World::OnCollideTtT(Tank* pTank1, Tank* pTank2)
 {
 	bool isCollided = false;
-
-	//int alphaX;
-	//int alphaY;
-
 
 	switch (pTank1->GetStateMachine()->GetDirection())
 	{
@@ -221,6 +219,7 @@ void World::ShellCollisionCheckPlayer()
 		{
 			dynamic_cast<Tank*>(m_pPlayer)->DeleteShell();
 			m_pPlayer->AddScore();
+			//m_pPlayer->AddScore();
 		}
 	}
 }
@@ -246,10 +245,10 @@ void World::EnemyMovement()
 		if (m_pEnemy[i] != nullptr && m_pMap->CheckEndOfMapForTank(m_pEnemy[i]->GetStateMachine()->GetDirection(), m_pEnemy[i]->GetVector()) == false)
 		{
 			if (OnCollideTtT(m_pEnemy[i], m_pPlayer) == false)
-				m_pEnemy[i]->MoveEnemyTank();
+				m_pEnemy[i]->Update();
 		}
 		else
-			m_pEnemy[i]->SetEnemyStatus();
+			m_pEnemy[i]->ResetDirection();
 	}
 }
 
@@ -274,21 +273,7 @@ bool World::OnCollideTtS(Tank* pTank1, Tank * pTank2)
 
 void World::MoveTank(Tank* pTank)
 {
-	switch (pTank->GetStateMachine()->GetDirection())
-	{
-	case TankStateMachine::Direction::kDown:
-		pTank->Move(0, 1);
-		break;
-	case TankStateMachine::Direction::kUp:
-		pTank->Move(0, -1);
-		break;
-	case TankStateMachine::Direction::kRight:
-		pTank->Move(1, 0);
-		break;
-	case TankStateMachine::Direction::kLeft:
-		pTank->Move(-1, 0);
-		break;
-	}
+	pTank->CheckMovingDirection();
 }
 
 void World::MoveShells(Tank * pTank)

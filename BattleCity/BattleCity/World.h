@@ -26,8 +26,12 @@ private:
 	~World();
 
 	//Tank* m_pPlayer;
-	Player* m_pPlayer;
-	Enemy* m_pEnemy[2];
+	//Player* m_pPlayer;
+	//Enemy* m_pEnemy[2];
+
+	Tank* m_pPlayer;
+	Tank* m_pEnemy[2];
+
 	Map* m_pMap;
 	Input* m_pInput;
 
@@ -55,7 +59,12 @@ public:
 	void FreeInstance() { delete m_pWorld; }
 
 	void GameProcess();
-	
+	//void CollisionCheck_Final(bool(*CollideType)(Tank* pTank1, Tank* pTank2));
+
+
+
+
+
 	bool OnCollideTtT(Tank* pTank1, Tank* pTank2);
 	bool OnCollideTtS(Tank* pTank1, Tank* pTank2);
 	

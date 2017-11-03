@@ -2,10 +2,12 @@
 
 Enemy::Enemy()
 {
-	SetRandomPosition();
+	SetInitDirection();
 	HowManyTimesToMove();
 
 	ReadTankSprite();
+	SetCommands();
+	m_playable = new NPC;
 }
 
 
@@ -13,10 +15,19 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::SetEnemyStatus()
+void Enemy::Update()
+{
+	MoveEnemyTank();
+}
+
+void Enemy::ResetDirection()
+{
+	Reset();
+}
+
+void Enemy::Reset()
 {
 	int index = rand() % 3;
-	bool attackOrNot = (rand() % 10 <= 3) ? true : false;
 
 	switch (m_state.GetDirection())
 	{
@@ -24,13 +35,13 @@ void Enemy::SetEnemyStatus()
 		switch (index)
 		{
 		case 0: // UpSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+			m_W->Execute(this);
 			break;
 		case 1: // RightSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kRight);
+			m_D->Execute(this);
 			break;
 		case 2: // LeftSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
+			m_A->Execute(this);
 			break;
 		}
 		break;
@@ -38,13 +49,13 @@ void Enemy::SetEnemyStatus()
 		switch (index)
 		{
 		case 0: // DownSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kDown);
+			m_S->Execute(this);
 			break;
 		case 1: // RightSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kRight);
+			m_D->Execute(this);
 			break;
 		case 2: // LeftSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
+			m_A->Execute(this);
 			break;
 		}
 		break;
@@ -52,13 +63,13 @@ void Enemy::SetEnemyStatus()
 		switch (index)
 		{
 		case 0: // DownSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kDown);
+			m_S->Execute(this);
 			break;
 		case 1: // UpSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+			m_W->Execute(this);
 			break;
 		case 2: // LeftSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kLeft);
+			m_A->Execute(this);
 			break;
 		}
 		break;
@@ -66,28 +77,24 @@ void Enemy::SetEnemyStatus()
 		switch (index)
 		{
 		case 0: // DownSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kDown);
+			m_S->Execute(this);
 			break;
 		case 1: // UpSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kUp);
+			m_W->Execute(this);
 			break;
 		case 2: // RightSide
-			m_state.ChangeDirection(TankStateMachine::Direction::kRight);
+			m_D->Execute(this);
 			break;
 		}
 		break;
 	}
 
-	if (attackOrNot)
-		Shoot();
-
 	ReadTankSprite();
 }
 
-void Enemy::SetRandomPosition()
+void Enemy::SetInitDirection()
 {
 	int random = rand() % 4;
-
 
 	switch (random)
 	{
@@ -114,6 +121,8 @@ void Enemy::SetRandomPosition()
 
 void Enemy::MoveEnemyTank()
 {
+	bool attackOrNot = (rand() % 10 <= 3) ? true : false;
+
 	if (m_timeToMove > 0)
 	{
 		switch (m_state.GetDirection())
@@ -138,9 +147,14 @@ void Enemy::MoveEnemyTank()
 	}
 	else if (m_timeToMove <= 0)
 	{
-		SetEnemyStatus();
+		//SetEnemyStatus();
+
+		Reset();
 		HowManyTimesToMove();
 	}
+
+	if (attackOrNot)
+		 m_K->Execute(this);
 }
 
 void Enemy::HowManyTimesToMove()

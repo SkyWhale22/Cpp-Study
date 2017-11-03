@@ -4,21 +4,21 @@
 class Player : public Tank
 {
 private:
-	int m_score = 0;
-	int m_HP = 5;
+	//int m_score = 0;
+	//int m_HP = 5;
 
 public:
 	Player();
 	~Player();
 
+	virtual void Update() override;
+	virtual void ResetDirection() override {};
+
 	void GetInput(char input);
-	bool CheckMovable();
 
-	void AddScore();
-
-	int GetScore() { return m_score; }
-	void GetDamage() { --m_HP; }
-	int GetHP() { return m_HP; }
+	//int GetScore() { return m_score; }
+	//void GetDamage() { --m_HP; }
+	//int GetHP() { return m_HP; }
 };
 
 

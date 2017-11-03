@@ -22,7 +22,7 @@ void CannonShell::SetPosition(int x, int y)
 void CannonShell::SetDirection(MovingDirection dir, Vector2 & pos)
 {
 	m_dir = dir;
-
+	
 	switch (m_dir)
 	{
 	case CannonShell::MovingDirection::kLeft:

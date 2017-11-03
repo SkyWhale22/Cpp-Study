@@ -40,6 +40,9 @@
     <Filter Include="XML Datas">
       <UniqueIdentifier>{b0dee23c-f8cb-4f8c-adf0-45c4a200fdca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tank\PlayerCommand">
+      <UniqueIdentifier>{666d2ebf-b458-4432-b933-1eb971093e98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleCity.cpp">
@@ -108,6 +111,24 @@
     <ClCompile Include="Tank.cpp">
       <Filter>Tank\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="CommandEscape.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandFire.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMoveDown.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMoveLeft.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMoveRight.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMoveUp.cpp">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Input.h">
@@ -175,6 +196,36 @@
     </ClInclude>
     <ClInclude Include="CollisionChecker.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Playable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandEscape.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMoveUp.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandFire.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMoveDown.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMoveLeft.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMoveRight.h">
+      <Filter>Tank\PlayerCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="TankCommand.h">
+      <Filter>Tank\PlayerCommand</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

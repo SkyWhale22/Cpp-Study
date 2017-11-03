@@ -10,10 +10,14 @@ public:
 	Enemy();
 	~Enemy();
 
+	virtual void Update() override;
+	virtual void ResetDirection() override;
+
+	void Reset();
 	void MoveEnemyTank();
 	void HowManyTimesToMove();
-	void SetEnemyStatus();
+	//void SetEnemyStatus();
 
-	void SetRandomPosition();
+	void SetInitDirection();
 };
 
